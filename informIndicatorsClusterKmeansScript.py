@@ -26,9 +26,9 @@ df = df.loc[idxKeep,:]
 df = df.set_index(['Iso3','IndicatorName'])
 df = df.unstack()
 # Save processed INFORM 6 key indicators
-#df.to_csv(r'C:\Users\a.manandhar\OneDrive - Save the Children International\Documents\data\INFORM\processed\INFORM2020_2010_2019_v040_2_ISO3_6pillars.csv')
+#df.to_csv(r'...\INFORM2020_2010_2019_v040_2_ISO3_6pillars.csv')
 # Read processed INFORM 6 key indicators
-df = pd.read_csv(r'C:\Users\a.manandhar\OneDrive - Save the Children International\Documents\data\INFORM\processed\INFORM2020_2010_2019_v040_2_ISO3_6pillars.csv',index_col='Iso3')
+df = pd.read_csv(r'...\INFORM2020_2010_2019_v040_2_ISO3_6pillars.csv',index_col='Iso3')
 
 # Standardize data
 from sklearn.preprocessing import StandardScaler
@@ -74,7 +74,7 @@ kmeans = kmeans.fit(X)
 print(kmeans.labels_)
 df['Cluster'] = kmeans.labels_
 # Save cluster labels
-# df.to_csv(r'C:\Users\a.manandhar\OneDrive - Save the Children International\Documents\data\INFORM\processed\INFORM2020_2010_2019_v040_2_ISO3_6pillars_KmeansK5.csv')
+# df.to_csv(r'...\INFORM2020_2010_2019_v040_2_ISO3_6pillars_KmeansK5.csv')
 
 # 2d plot
 fig,ax = plt.subplots(figsize=(6,5))
