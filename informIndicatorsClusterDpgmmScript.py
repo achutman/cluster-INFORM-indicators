@@ -69,7 +69,17 @@ plt.show()
 from sklearn.mixture import BayesianGaussianMixture
 
 bgm = BayesianGaussianMixture(n_components=10,n_init=100).fit(X)
-plt.stem(bgm.weights_)
+
+# Plot cluster probabilities
+fig,ax=plt.subplots()
+ax.stem(np.arange(20),bgm.weights_)
+ax.set_xticks(np.arange(20))
+ax.set_xlabel('Clusters',fontsize='x-large')
+ax.set_ylabel('Cluster Probabilities',fontsize='x-large')
+fig.tight_layout()
+# fig.savefig(os.path.join(pathSave,'clusterPis.png'),dpi=300)
+# fig.savefig(os.path.join(pathSave,'clusterPis_lowres.png'),dpi=100)
+
 print(bgm.means_)
 cluster_labels = bgm.predict(X)
 df['Cluster'] = bgm.predict(X)
